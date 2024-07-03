@@ -2,7 +2,11 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+To set up a safe development environment in a Docker container using `.devcontainer` in **VSCode**, follow these steps:
+
+Press <kbd>⌘</kbd> + <kbd>SHIFT</kbd> + <kbd>P</kbd> and type `>Dev Containers: Rebuild Container`.
+
+Use one of the following commands to start the development server:
 
 ```bash
 npm run dev
@@ -16,16 +20,16 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Next.UI Documentation](https://nextui.org/docs/)
+- [Next.js internationalization (i18n)](https://next-intl-docs.vercel.app/docs/getting-started)
+- [@lottiefiles/dotlottie-react](https://developers.lottiefiles.com/docs/dotlottie-player/dotlottie-react/)
+- [Zod](https://zod.dev/)
+- [redis]()
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 

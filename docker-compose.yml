@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  next:
+    container_name: next
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 3000:3000
+    networks:
+      - burnotes_network
+
+  # Add more containers below (nginx, postgres, etc.)
+
+# Define a network, which allows containers to communicate
+# with each other, by using their container name as a hostname
+networks:
+  burnotes_network:
+    external: true
