@@ -1,0 +1,58 @@
+{
+  "Common": {
+    "application_name": "Burnable Notes",
+
+    "block_hint_title": "Hint",
+
+    "block_hint_service_describe": "Create an encrypted note. Notes are encrypted in the browser, not on the server. Secret keys and unencrypted data are not accessible to the server. You will receive a secret link to decrypt. Notes are deleted from the server immediately after viewing or upon expiration.",
+
+    "block_hint_service_expire": "Expiration period:",
+
+    "block_hint_save_note_result_text": "This is the secret link to read the note. You can copy it.",
+
+    "block_hint_save_note_result_title": "Secret note saved!",
+
+    "block_hint_decrypt": "You have opened the secret note. It cannot be opened again as it has been deleted from the server. Copy the necessary data.",
+
+    "block_hint_try_open": "Do you really want to open the note? The note can only be opened once.",
+
+    "block_hint_try_decrypt": "You are trying to open the secret note. Any attempt to open it will result in its destruction.",
+
+    "block_hint_error_decrypt": "Unable to open the secret note. It may have already been opened by someone else or the expiration period has passed.",
+
+    "form_input_label_secret_key": "Secret Key",
+
+    "form_input_placeholder_secret_key": "Generate Key",
+
+    "form_input_tooltip_secret_key": "This is the secret key used to encrypt your secret note.",
+
+    "form_textarea_placeholder_secret_note": "Enter text",
+
+    "form_textarea_label_secret_note": "Your secret note",
+
+    "shorts_______": "",
+
+    "create_new": "Create",
+    "save": "Save",
+    "sending": "Sending",
+    "saving": "Saving",
+    "copy": "Copy",
+    "decrypting": "Decrypting",
+    "open": "Open",
+    "yes": "Yes",
+
+    "langs_______": "",
+    "ru": "Russian",
+    "en": "English",
+    "uk": "Ukrainian",
+    "ge": "Georgian",
+    "am": "Armenian",
+
+    "errors_______": "",
+    "server_error": "Server Error",
+    "database_error": "Database Error",
+    "incorrect_data": "Incorrect Data",
+    "incorrect_secret_key": "Incorrect secret key",
+    "min_lenght": "Min length"
+  }
+}

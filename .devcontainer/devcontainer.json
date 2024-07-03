@@ -1,0 +1,24 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
+{
+	"name": "NEXT + Redis",
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "nuxt",
+	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+	"forwardPorts": [
+		3000
+	],
+	// "postCreateCommand": "whoami"
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"unifiedjs.vscode-mdx",
+				"esbenp.prettier-vscode",
+				"ms-azuretools.vscode-docker",
+				"cweijan.vscode-redis-client",
+				"bradlc.vscode-tailwindcss",
+				"Gruntfuggly.todo-tree"
+			]
+		}
+	}
+}
