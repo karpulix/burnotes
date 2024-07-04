@@ -109,7 +109,7 @@ const FormZod: React.FC<FormZodComponentProps> = ({ setResultUrl }) => {
           placeholder={t("form_textarea_placeholder_secret_note")}
           errorMessage={errors.value?.message}
           classNames={{
-            input: "min-h-[200px]",
+            input: "min-h-[200px] text-lg",
           }}
           isInvalid={errors.value ? true : false}
         ></Textarea>

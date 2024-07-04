@@ -13,7 +13,7 @@ export const SendingOverlay = function (props: any) {
         color="secondary"
         isIndeterminate
         label={t("saving")}
-        className="max-w-md"
+        className="w-[70%]"
       />
     </div>
   );

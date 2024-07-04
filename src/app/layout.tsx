@@ -43,7 +43,11 @@ export default async function RootLayout({ children }: RootLayoutProps) {
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ff7a00" />
         <meta name="msapplication-TileColor" content="#b91d47" />
-        <meta name="theme-color" content="#ffffff"></meta>
+        <meta name="theme-color" content="#ffffff" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+        />
       </head>
       <NextIntlClientProvider messages={messages}>
         <body
