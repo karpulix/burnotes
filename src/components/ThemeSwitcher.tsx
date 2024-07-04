@@ -2,41 +2,9 @@
 
 import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";
-
-// import { Switch } from "@nextui-org/react";
-import { Skeleton } from "@nextui-org/react";
-
 import { MoonIcon } from "@/components/icons/MoonIcon";
 import { SunIcon } from "@/components/icons/SunIcon";
-
-import { Switch, VisuallyHidden, useSwitch } from "@nextui-org/react";
-
-// export default function ThemeSwitcher() {
-//   const [mounted, setMounted] = useState(false);
-
-//   const { theme, setTheme } = useTheme();
-
-//   useEffect(() => {
-//     if (typeof window !== "undefined") {
-//       setMounted(true);
-//     }
-//   }, []);
-
-//   if (!mounted) return null;
-
-//   return (
-//     <div>
-//       <Switch
-//         isSelected={theme == "light"}
-//         size="sm"
-//         color="secondary"
-//         onChange={() => setTheme(theme == "light" ? "dark" : "light")}
-//         startContent={<SunIcon />}
-//         endContent={<MoonIcon />}
-//       ></Switch>
-//     </div>
-//   );
-// }
+import { VisuallyHidden, useSwitch } from "@nextui-org/react";
 
 const ThemeSwitcher = (props: any) => {
   const {

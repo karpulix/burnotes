@@ -3,12 +3,11 @@ import { z } from "zod";
 import { Button, Input, Spacer, Textarea, Tooltip } from "@nextui-org/react";
 import { BinaryIcon } from "@/components/icons/BinaryIcon";
 import { useTranslations } from "next-intl";
-import { FormEvent, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { encrypt, generateRandomString } from "@/lib/cryptolib";
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { Hint } from "./Hint";
 import { SendingOverlay } from "./SendingOverlay";
-import { sleep } from "@/lib/helpers";
 
 interface FormZodComponentProps {
   setResultUrl: React.Dispatch<React.SetStateAction<string>>;

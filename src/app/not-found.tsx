@@ -1,8 +1,12 @@
 "use client";
+import { NotFoundComponent } from "@/components/NotFound/NotFoundComponent";
+import { Spacer } from "@nextui-org/react";
 export default function NotFound() {
   return (
     <div>
-      <h1 className="error404">404</h1>
+      <Spacer y={20}></Spacer>
+
+      <NotFoundComponent />
     </div>
   );
 }

@@ -14,11 +14,5 @@ export default function LocaleSwitcher() {
     });
   });
 
-  return (
-    <LocaleSwitcherSelect
-      defaultValue={locale}
-      items={items}
-      // label={t("label")}
-    />
-  );
+  return <LocaleSwitcherSelect defaultValue={locale} items={items} />;
 }

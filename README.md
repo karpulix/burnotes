@@ -4,6 +4,10 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 To set up a safe development environment in a Docker container using `.devcontainer` in **VSCode**, follow these steps:
 
+Press <kbd>⌘</kbd> + <kbd>SHIFT</kbd> + <kbd>P</kbd> and type `>Dev Containers: Reopen Folder Locally `.
+
+For rebuild container:
+
 Press <kbd>⌘</kbd> + <kbd>SHIFT</kbd> + <kbd>P</kbd> and type `>Dev Containers: Rebuild Container`.
 
 Use one of the following commands to start the development server:

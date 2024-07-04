@@ -17,14 +17,11 @@ import { setUserLocale } from "@/services/locale";
 type Props = {
   defaultValue: string;
   items: Array<{ key: string; label: string }>;
-  // label: string;
 };
 
 export default function LocaleSwitcherSelect({ defaultValue, items }: Props) {
   const [isPending, startTransition] = useTransition();
-
   function onChange(select: any) {
-    console.log(select);
     const locale = select as Locale;
     startTransition(() => {
       setUserLocale(locale);
@@ -51,8 +48,6 @@ export default function LocaleSwitcherSelect({ defaultValue, items }: Props) {
             key={item.key}
             value={item.key}
             shortcut={item.key}
-            // color={item.key === "delete" ? "danger" : "default"}
-            // className={item.key === "delete" ? "text-danger" : ""}
           >
             {item.label}
           </DropdownItem>

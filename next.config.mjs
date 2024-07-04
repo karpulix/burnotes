@@ -1,15 +1,7 @@
-// /** @type {import('next').NextConfig} */
-// import { i18n } from "./next-i18next.config.mjs";
-
-// const nextConfig = {
-//   reactStrictMode: true,
-//   ...i18n,
-// };
-// console.log(nextConfig);
-// export default nextConfig;
-
 /** @type {import('next').NextConfig} */
 import createNextIntlPlugin from "next-intl/plugin";
+import withPWA from "next-pwa";
+import withPlugins from "next-compose-plugins";
 
 const withNextIntl = createNextIntlPlugin();
 
@@ -17,4 +9,15 @@ const nextConfig = {
   reactStrictMode: false,
 };
 
-export default withNextIntl(nextConfig);
+export default withPlugins(
+  [
+    [withNextIntl],
+    [
+      withPWA,
+      {
+        dest: "public",
+      },
+    ],
+  ],
+  nextConfig
+);

@@ -1,7 +1,4 @@
 "use client";
-
-// import { assert } from "console";
-// import { client } from "@/lib/db";
 import { useTranslations } from "next-intl";
 import { Decrypt } from "@/components/Decrypt";
 import ToCreateButton from "@/components/ToCreateButton";

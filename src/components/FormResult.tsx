@@ -27,4 +27,3 @@ export const FormResult: React.FC<FormResultProps> = function ({ resultUrl }) {
     </section>
   );
 };
-// overflow: hidden;
