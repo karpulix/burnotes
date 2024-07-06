@@ -11,6 +11,7 @@
 - docker-compose.yml для сборки и деплоя production
 - Helm Chart для деплоя в кластер Kubernetes
 - Подключить что-то типа trunk.io к среде разработки
+- Разобраться с первым рендерингом после сборки приложения
 
 ## Сборка
 
@@ -126,7 +127,3 @@ npm install --include=dev
 Самый простой способ развернуть это приложение в production - использовать [платформу Vercel](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) от создателей Next.js.
 
 [Документацию по развертыванию Next.js](https://nextjs.org/docs/deployment).
-
-```
-
-```
