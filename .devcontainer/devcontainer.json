@@ -3,12 +3,12 @@
 {
 	"name": "NEXT + Redis",
 	"dockerComposeFile": "docker-compose.yml",
-	"service": "nuxt",
+	"service": "next",
 	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
 	"forwardPorts": [
 		3000
 	],
-	// "postCreateCommand": "whoami"
+	"postStartCommand": "npm install --include=dev && npm run dev",
 	"customizations": {
 		"vscode": {
 			"extensions": [
@@ -18,6 +18,7 @@
 				"cweijan.vscode-redis-client",
 				"bradlc.vscode-tailwindcss",
 				"Gruntfuggly.todo-tree"
+				// "trunk.io"
 			]
 		}
 	}
