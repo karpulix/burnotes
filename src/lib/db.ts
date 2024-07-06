@@ -17,7 +17,7 @@ const redisSetParams: Record<string, any> = () => {
 const client = createClient({
   password: String(process.env.REDIS_PW || ""),
   socket: {
-    host: String(process.env.REDIS_HOST || "127.0.0.1"),
+    host: String(process.env.REDIS_HOST || "redis"),
     port: Number(process.env.REDIS_PORT || 6379),
   },
 });
