@@ -4,16 +4,14 @@ import { CreateIcon } from "@/components/icons/CreateIcon";
 import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 
-export default function ToCreateButton() {
+export default function CreateButton() {
   const t = useTranslations("Common");
   const router = useRouter();
   const onPressAction = () => {
     if (window.location.pathname === "/") {
       window.location.reload();
-      console.log("press1");
     } else {
       router.push("/");
-      console.log("press1");
     }
   };
   return (

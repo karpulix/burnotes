@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
-import ToCreateButton from "@/components/ToCreateButton";
+import CreateButton from "@/components/CreateButton";
 import FormZod from "@/components/FormZod";
 import { FormResult } from "@/components/FormResult";
 
@@ -15,13 +15,13 @@ export default function Page() {
     <>
       {resultUrl === "" && (
         <>
-          <FormZod setResultUrl={setResultUrl}></FormZod>
+          <FormZod setResultUrl={setResultUrl} />
         </>
       )}
       {resultUrl.length > 1 && (
         <>
-          <FormResult resultUrl={resultUrl}></FormResult>
-          <ToCreateButton></ToCreateButton>
+          <FormResult resultUrl={resultUrl} />
+          <CreateButton />
         </>
       )}
     </>

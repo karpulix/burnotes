@@ -2,7 +2,7 @@
 
 import React from "react";
 
-export const CreateIcon = (props: any) => (
+export const CreateIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     fill="none"
     stroke="currentColor"

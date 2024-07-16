@@ -8,6 +8,7 @@
 	"forwardPorts": [
 		3000
 	],
+	"onCreateCommand": "[ ! -f .env ] && cp .env.example .env || true",
 	"postStartCommand": "npm install --include=dev && npm run dev",
 	"customizations": {
 		"vscode": {
@@ -17,8 +18,8 @@
 				"ms-azuretools.vscode-docker",
 				"cweijan.vscode-redis-client",
 				"bradlc.vscode-tailwindcss",
+				"bradlc.vscode-tailwindcss",
 				"Gruntfuggly.todo-tree"
-				// "trunk.io"
 			]
 		}
 	}

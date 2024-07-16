@@ -7,6 +7,9 @@ const withNextIntl = createNextIntlPlugin();
 
 const nextConfig = {
   reactStrictMode: false,
+  experimental: {
+    serverComponents: true,
+  },
 };
 
 export default withPlugins(

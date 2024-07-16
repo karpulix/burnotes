@@ -2,9 +2,13 @@
 import React from "react";
 import { useTranslations } from "next-intl";
 
-export const Hint = function (props: any) {
-  const t = useTranslations("Common");
+type HintPropsType = {
+  color: string;
+  text: string;
+};
 
+export const Hint: React.FC<HintPropsType> = function (props) {
+  const t = useTranslations("Common");
   return (
     <>
       <blockquote

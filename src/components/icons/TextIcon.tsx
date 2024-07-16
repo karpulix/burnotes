@@ -2,7 +2,7 @@
 
 import React from "react";
 
-export const TextIcon = (props: any) => (
+export const TextIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     fill="none"
     stroke="currentColor"

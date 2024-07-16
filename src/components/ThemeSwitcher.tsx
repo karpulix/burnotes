@@ -6,7 +6,7 @@ import { MoonIcon } from "@/components/icons/MoonIcon";
 import { SunIcon } from "@/components/icons/SunIcon";
 import { VisuallyHidden, useSwitch } from "@nextui-org/react";
 
-const ThemeSwitcher = (props: any) => {
+const ThemeSwitcher = () => {
   const {
     Component,
     slots,
@@ -14,7 +14,7 @@ const ThemeSwitcher = (props: any) => {
     getBaseProps,
     getInputProps,
     getWrapperProps,
-  } = useSwitch(props);
+  } = useSwitch();
   const [mounted, setMounted] = useState(false);
 
   const { theme, setTheme } = useTheme();

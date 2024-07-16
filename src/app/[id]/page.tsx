@@ -1,7 +1,7 @@
 "use client";
 import { useTranslations } from "next-intl";
-import { Decrypt } from "@/components/Decrypt";
-import ToCreateButton from "@/components/ToCreateButton";
+import { DecryptedNote } from "@/components/DecryptedNote";
+import CreateButton from "@/components/CreateButton";
 import { useState } from "react";
 import { Button, Spacer } from "@nextui-org/react";
 import { TextIcon } from "@/components/icons/TextIcon";
@@ -15,7 +15,7 @@ export default function Page({ params }: { params: { id: string } }) {
     <div>
       {!runDecrypt && (
         <>
-          <Hint color="warning" text={t("block_hint_try_open")}></Hint>
+          <Hint color="warning" text={t("block_hint_try_open")} />
           <div className="flex gap-4 justify-center mt-5 mb-5">
             <Button
               onPress={() => setRunDecrypt(true)}
@@ -29,8 +29,8 @@ export default function Page({ params }: { params: { id: string } }) {
       )}
       {runDecrypt && (
         <>
-          <Decrypt id={params.id}></Decrypt>
-          <ToCreateButton></ToCreateButton>
+          <DecryptedNote id={params.id} />
+          <CreateButton />
         </>
       )}
     </div>

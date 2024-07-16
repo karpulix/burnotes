@@ -6,7 +6,7 @@ import LocaleSwitcher from "@/components/LocaleSwitcher";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 
-export const Header = function (props: any) {
+export const Header = function () {
   const t = useTranslations("Common");
 
   return (
@@ -20,10 +20,10 @@ export const Header = function (props: any) {
         </h1>
         <div className="text-sm font-medium grow"></div>
         <div className="shrink text-sm font-medium">
-          <ThemeSwitcher></ThemeSwitcher>
+          <ThemeSwitcher />
         </div>
         <div className="shrink text-sm font-medium">
-          <LocaleSwitcher></LocaleSwitcher>
+          <LocaleSwitcher />
         </div>
       </div>
     </header>

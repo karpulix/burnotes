@@ -1,10 +1,11 @@
-import "./globals.css";
+import "@/styles/globals.css";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
 
 import { Header } from "@/components/Header";
+import Head from "next/head";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -20,7 +21,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
   const messages = await getMessages();
   return (
     <html lang={locale} suppressHydrationWarning={true}>
-      <head>
+      <Head>
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#000000" />
         <link
@@ -48,7 +49,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
           name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
         />
-      </head>
+      </Head>
       <NextIntlClientProvider messages={messages}>
         <body
           suppressHydrationWarning={true}
@@ -59,7 +60,6 @@ export default async function RootLayout({ children }: RootLayoutProps) {
               <Header />
               <main>{children}</main>
             </div>
-            {/* <Analytics /> */}
           </ThemeProvider>
         </body>
       </NextIntlClientProvider>

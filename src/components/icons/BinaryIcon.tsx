@@ -2,7 +2,7 @@
 
 import React from "react";
 
-export const BinaryIcon = (props: any) => (
+export const BinaryIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     fill="none"
     stroke="currentColor"

@@ -3,7 +3,7 @@ import React from "react";
 import { useTranslations } from "next-intl";
 import "./style.css";
 
-export const NotFoundComponent = function (props: any) {
+export const NotFoundComponent = function () {
   const t = useTranslations("Common");
 
   return (

@@ -3,7 +3,7 @@ import React from "react";
 import { useTranslations } from "next-intl";
 import { Progress } from "@nextui-org/react";
 
-export const SendingOverlay = function (props: any) {
+export const SendingOverlay = function () {
   const t = useTranslations("Common");
 
   return (

@@ -13,7 +13,7 @@ export const FormResult: React.FC<FormResultProps> = function ({ resultUrl }) {
 
   return (
     <section className="FormResult flex flex-col">
-      <Hint color="success" text={t("block_hint_save_note_result_text")}></Hint>
+      <Hint color="success" text={t("block_hint_save_note_result_text")} />
       <Snippet
         tooltipProps={{
           content: t("copy"),

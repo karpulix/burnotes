@@ -1,5 +1,6 @@
+"use client";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
-export const FireIcon = (props: any) => {
+export const FireIcon = (props: React.SVGProps<SVGSVGElement>) => {
   return (
     <DotLottieReact
       className="lottie-inline"
@@ -7,6 +8,6 @@ export const FireIcon = (props: any) => {
       src="/lottie/fire.json"
       loop
       autoplay
-    ></DotLottieReact>
+    />
   );
 };

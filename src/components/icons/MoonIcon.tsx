@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-export const MoonIcon = (props: any) => (
+export const MoonIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     aria-hidden="true"
     focusable="false"

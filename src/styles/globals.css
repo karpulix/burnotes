@@ -2,16 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* html,
-body {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-
-  justify-items: center;
-} */
-
 form {
   position: relative;
 }
@@ -48,12 +38,11 @@ section.FormResult pre {
   overflow: hidden;
 }
 
-.Decrypt {
+.DecryptedNote {
   display: flex;
   flex-direction: column;
 }
-section.Decrypt pre {
-  /* text-wrap: balance; */
+section.DecryptedNote pre {
   padding: 5px 10px;
   overflow-wrap: break-word;
   word-break: break-all;

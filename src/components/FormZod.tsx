@@ -31,7 +31,7 @@ const FormZod: React.FC<FormZodComponentProps> = ({ setResultUrl }) => {
     setValue,
     formState: { errors, isSubmitting },
   } = useForm<FormData>({
-    resolver: zodResolver(schema) as any,
+    resolver: zodResolver(schema),
   });
 
   const [sending, setSending] = useState(false);
@@ -80,8 +80,8 @@ const FormZod: React.FC<FormZodComponentProps> = ({ setResultUrl }) => {
   return (
     <>
       <form className="FormZod" onSubmit={handleSubmit(onSubmit)}>
-        {sendingProgress && <SendingOverlay></SendingOverlay>}
-        {serverError && <Hint color="danger" text={serverError}></Hint>}
+        {sendingProgress && <SendingOverlay />}
+        {serverError && <Hint color="danger" text={serverError} />}
         <Tooltip
           size="sm"
           delay={500}
@@ -112,7 +112,7 @@ const FormZod: React.FC<FormZodComponentProps> = ({ setResultUrl }) => {
             input: "min-h-[200px] text-lg",
           }}
           isInvalid={errors.value ? true : false}
-        ></Textarea>
+        />
         <Spacer y={3} />
         <Button
           type="submit"
@@ -123,7 +123,7 @@ const FormZod: React.FC<FormZodComponentProps> = ({ setResultUrl }) => {
           {t("save")}
         </Button>
       </form>
-      <Hint color="primary" text={t("block_hint_service_describe")}></Hint>
+      <Hint color="primary" text={t("block_hint_service_describe")} />
     </>
   );
 };

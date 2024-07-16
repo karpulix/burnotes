@@ -8,38 +8,42 @@ import { Snippet } from "@nextui-org/react";
 import { Hint } from "./Hint";
 import {} from "next/navigation";
 
-interface DecryptProps {
+type SetContentFnType = React.Dispatch<React.SetStateAction<string>>;
+type SetErrorFnType = React.Dispatch<React.SetStateAction<boolean>>;
+
+interface DecryptedNoteProps {
   id: string;
 }
 
-async function fetchData(id: string, setContent: any, setError: any) {
+async function fetchData(
+  id: string,
+  setContent: SetContentFnType,
+  setError: SetErrorFnType
+) {
   try {
-    console.log(window);
     const hash = window.location.hash.replace("#", "");
     const response = await fetch("/api/secret/?id=" + id);
     const data = await response.json();
     const decrypted = decrypt(data.encrypted, hash);
-    console.log("decripte", decrypted);
     setContent(decrypted);
   } catch (error) {
     setError(true);
   }
 }
-export const Decrypt: React.FC<DecryptProps> = function ({ id }) {
+export const DecryptedNote: React.FC<DecryptedNoteProps> = function ({ id }) {
   const [content, setContent] = useState("");
   const [error, setError] = useState(false);
-
   const t = useTranslations("Common");
   useEffect(() => {
     fetchData(id, setContent, setError);
-  }, []);
+  }, [id]);
   return (
-    <section className="Decrypt">
+    <section className="DecryptedNote">
       {!error ? (
         <>
           {content ? (
             <>
-              <Hint color="success" text={t("block_hint_decrypt")}></Hint>
+              <Hint color="success" text={t("block_hint_decrypt")} />
               <Snippet
                 symbol=""
                 className="bg-slate-200 dark:bg-slate-900 rounded-md p-2 min-w-full items-start"
@@ -49,7 +53,7 @@ export const Decrypt: React.FC<DecryptProps> = function ({ id }) {
             </>
           ) : (
             <>
-              <Hint color="warning" text={t("block_hint_try_decrypt")}></Hint>
+              <Hint color="warning" text={t("block_hint_try_decrypt")} />
               <div className="rounded-md text-center">
                 <Spinner
                   color="default"
@@ -62,7 +66,7 @@ export const Decrypt: React.FC<DecryptProps> = function ({ id }) {
         </>
       ) : (
         <>
-          <Hint color="danger" text={t("block_hint_error_decrypt")}></Hint>
+          <Hint color="danger" text={t("block_hint_error_decrypt")} />
         </>
       )}
     </section>
