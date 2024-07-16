@@ -6,6 +6,7 @@ import { getLocale, getMessages } from "next-intl/server";
 
 import { Header } from "@/components/Header";
 import Head from "next/head";
+import { Footer } from "@/components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -56,9 +57,11 @@ export default async function RootLayout({ children }: RootLayoutProps) {
           className={`antialiased min-h-screen bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-50 ${inter.className}`}
         >
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            <div className="max-w-2xl mx-auto py-10 px-4">
+            <div className="max-w-2xl mx-auto pt-10 px-4 flex flex-col h-[100dvh]">
               <Header />
               <main>{children}</main>
+              <div className="grow"></div>
+              <Footer />
             </div>
           </ThemeProvider>
         </body>
