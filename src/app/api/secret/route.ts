@@ -45,7 +45,7 @@ export async function POST(request: NextRequest) {
     }
 
     const id = generateKey();
-    const redisResult = await client.set(id, encrypted, redisSetParams);
+    const redisResult = await client.set(id, encrypted, redisSetParams());
 
     if (redisResult !== "OK") throw new Error("Database save error");
 

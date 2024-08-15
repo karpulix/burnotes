@@ -1,6 +1,6 @@
 import { createClient } from "redis";
 
-const redisSetParams: Record<string, any> = () => {
+const redisSetParams: () => Record<string, any> = () => {
   const redisParams: Record<string, any> = {};
   redisParams.NX = true;
   redisParams.EX = Number(process.env.REDIS_EX || 600);
