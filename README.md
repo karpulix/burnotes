@@ -84,6 +84,51 @@ npm install --include=dev
 - `npm run build` - сборка приложения
 - `npm run lint` - запуск линтера
 
+### Production Deployment with Docker Compose
+
+This method allows you to run a production-like build of Burnotes locally or deploy it to any server that has Docker and Docker Compose installed. It utilizes the `Dockerfile.prod` and `docker-compose.yml` files located in the root of the project.
+
+**Prerequisites:**
+
+- [Docker](https://docs.docker.com/get-docker/) installed.
+- [Docker Compose](https://docs.docker.com/compose/install/) installed.
+
+**Configuration:**
+
+1.  Create a `.env` file in the root of the project. This file will be used by `docker-compose.yml` to set necessary environment variables.
+2.  A critical variable to set is `REDIS_PW` for your Redis instance.
+
+    Example `.env` file:
+    ```env
+    # .env
+    REDIS_PW=your_super_secret_redis_password
+    # You can also override other Redis settings if needed:
+    # REDIS_EX=86400
+    # REDIS_EX_INF=false
+
+    # Example: Set the base URL for your application if it's behind a proxy or has a specific domain
+    # NEXT_PUBLIC_BASE_URL=https://yourdomain.com
+    ```
+    **Important:** Choose a strong and unique password for `REDIS_PW`.
+
+**Running the Application:**
+
+1.  To build the Docker images and start the application stack (Next.js app and Redis):
+    ```bash
+    docker-compose up --build -d
+    ```
+    - `--build`: Forces Docker Compose to build the images (e.g., if you've made changes to `Dockerfile.prod` or application code).
+    - `-d`: Runs the containers in detached mode (in the background).
+
+2.  The application should now be available at `http://localhost:3000`.
+
+**Stopping the Application:**
+
+1.  To stop and remove the containers:
+    ```bash
+    docker-compose down
+    ```
+
 ## Конфигурация (.env)
 
 Для конфигурации используется файл `.env` который необходимо создать в корне проекта.

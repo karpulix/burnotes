@@ -1,0 +1,47 @@
+# Git files
+.git
+.gitignore
+
+# Node modules (these will be installed within the Docker image)
+node_modules
+npm-debug.log
+npm-debug.*.log
+
+# Next.js build output (this will be generated within the Docker image)
+.next
+
+# VSCode settings and devcontainer files
+.vscode
+.devcontainer
+
+# Operating System files
+.DS_Store
+*.swp
+*~
+Thumbs.db
+
+# Environment files (should be passed at runtime, not baked into the image)
+.env
+.env*.local
+.env.development
+.env.test
+.env.production
+*.env
+
+# Docker files themselves if not needed in context
+Dockerfile
+Dockerfile.prod
+docker-compose.yml
+# If you have other docker-compose files like docker-compose.dev.yml, add them too
+
+# Readme and License (usually not needed for the application to run)
+README.md
+LICENSE
+
+# Test files (if you have a separate test directory)
+# tests/
+# coverage/
+
+# Any other logs or temporary files
+logs
+*.log

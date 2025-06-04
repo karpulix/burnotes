@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+    container_name: burnotes_app
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      # Make sure to set REDIS_PW in a .env file or your deployment environment
+      - REDIS_PW=${REDIS_PW:-} # Uses REDIS_PW from .env, defaults to empty if not set
+      - REDIS_EX=${REDIS_EX:-86400}
+      - REDIS_EX_INF=${REDIS_EX_INF:-false}
+      # Add any other necessary environment variables for your application
+      # Example: NEXT_PUBLIC_BASE_URL=http://localhost:3000
+    depends_on:
+      - redis
+    networks:
+      - burnotes_network
+
+  redis:
+    image: redis:7-alpine # Using a specific version of redis-alpine
+    container_name: burnotes_redis
+    restart: unless-stopped
+    ports:
+      # Only expose Redis locally to the Docker host if needed for debugging
+      # For production, it's often better not to expose Redis ports directly
+      # - "6379:6379"
+      pass:
+    command: redis-server --requirepass ${REDIS_PW:-supersecretpassword} # Use REDIS_PW from .env or default
+    volumes:
+      - redis_data:/data
+    environment:
+      # This REDIS_ARGS is an example if you need to pass more args,
+      # but requirepass is handled by the command now.
+      # - REDIS_ARGS=--requirepass ${REDIS_PW:-supersecretpassword}
+      - REDIS_REPLICATION_MODE=${REDIS_REPLICATION_MODE:-master} # Example for replication, not strictly needed for single instance
+    networks:
+      - burnotes_network
+
+volumes:
+  redis_data:
+    driver: local
+
+networks:
+  burnotes_network:
+    driver: bridge
